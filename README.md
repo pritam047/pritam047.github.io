@@ -1,3 +1,3 @@
-# pritam047.gihtub.io
+# My Portfolio
 
 ![](./screenshot.jpg)
