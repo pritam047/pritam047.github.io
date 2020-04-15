@@ -1,3 +1,3 @@
 # pritam047.gihtub.io
 
-![] (./screenshot.jpg)
+![](./screenshot.jpg)
