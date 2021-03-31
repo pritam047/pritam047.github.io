@@ -34,6 +34,30 @@
   <!-- Custom CSS-->
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
+<!--  EmailJS config -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script type="text/javascript">
+(function() {
+emailjs.init("user_SvF3PnYSEQzMLVxKrZajO");
+})();
+</script>
+
+<script type="text/javascript">
+  window.onload = function() {
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // generate a five digit number for the contact_number variable
+          this.contact_number.value = Math.random() * 100000 | 0;
+          // these IDs from the previous steps
+          emailjs.sendForm('contact_service', 'contact_form', this)
+              .then(function() {
+                  console.log('SUCCESS!');
+              }, function(error) {
+                  console.log('FAILED...', error);
+              });
+      });
+  }
+</script>
 </head>
 
 <body class="dark-vertion black-bg">
@@ -340,27 +364,27 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <form action="https://formspree.io/pritamkar13@gmail.com" id="contactForm"
-                  class="single-form quate-form wow fadeInUp" data-toggle="validator" method="POST">
-                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                  <!-- <div id="msgSubmit" class="h3 text-center hidden"></div> -->
+                  <input type="hidden" name="contact_number">
                   <div class="row">
                     <div class="col-sm-12">
-                      <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Your Name"
-                        required />
+                      <input name="user_name" class="contact-name form-control" type="text" placeholder="Your Name"
+                        required />               <!-- User Name-->
                     </div>
                     <div class="col-sm-12">
-                      <input name="_replyto" class="contact-subject form-control" id="email" type="email"
-                        placeholder="Your Email" required />
+                      <input name="user_email" class="contact-subject form-control" type="email"
+                        placeholder="Your Email" required /> <!-- User email-->
                     </div>
 
                     <div class="col-sm-12">
-                      <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message"
-                        required></textarea>
+                      <textarea name="message" class="contact-message" rows="6" placeholder="Your Message"
+                        required></textarea> <!-- user message -->
                     </div>
 
                     <!-- Subject Button -->
                     <div class="btn-form col-sm-12">
-                      <button type="submit" class="btn btn-fill btn-block" id="form-submit">
+                      <button type="submit" class="btn btn-fill btn-block">
                         Send Message
                       </button>
                     </div>
