@@ -340,27 +340,26 @@
                 </div>
               </div>
               <div class="col-sm-6 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <form action="https://formspree.io/pritamkar13@gmail.com" id="contactForm"
-                  class="single-form quate-form wow fadeInUp" data-toggle="validator" method="POST">
-                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                <form name="contact" method="POST" data-netlify="true">
+                  <!-- <div id="msgSubmit" class="h3 text-center hidden"></div> -->
                   <div class="row">
                     <div class="col-sm-12">
-                      <input name="name" class="contact-name form-control" id="name" type="text" placeholder="Your Name"
+                      <input name="name" class="contact-name form-control" type="text" placeholder="Your Name"
                         required />
                     </div>
                     <div class="col-sm-12">
-                      <input name="_replyto" class="contact-subject form-control" id="email" type="email"
+                      <input name="_replyto" class="contact-subject form-control" type="email"
                         placeholder="Your Email" required />
                     </div>
 
                     <div class="col-sm-12">
-                      <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message"
+                      <textarea name="message" class="contact-message" rows="6" placeholder="Your Message"
                         required></textarea>
                     </div>
 
                     <!-- Subject Button -->
                     <div class="btn-form col-sm-12">
-                      <button type="submit" class="btn btn-fill btn-block" id="form-submit">
+                      <button type="submit" class="btn btn-fill btn-block">
                         Send Message
                       </button>
                     </div>
